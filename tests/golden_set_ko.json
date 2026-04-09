@@ -1,0 +1,1982 @@
+[
+  {
+    "id": "ko_pos_001",
+    "text": "이 냉장고 산 지 3년 됐는데 아직도 소음 하나 없이 잘 돌아가요. LG 믿고 삽니다.",
+    "label": "positive",
+    "topics": [
+      "내구성",
+      "소음"
+    ],
+    "topic_sentiments": {
+      "내구성": "positive",
+      "소음": "positive"
+    },
+    "keywords": [
+      "냉장고",
+      "소음",
+      "내구성"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "장기 사용 만족 + 브랜드 신뢰",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "이 냉장고 산 지 3년 됐는데 아직도 소음 하나 없이 잘 돌아가요. LG 믿고 삽니다."
+  },
+  {
+    "id": "ko_pos_002",
+    "text": "에어컨 설치 기사님이 너무 친절하셨어요. 설치도 깔끔하고 AS도 빠르고 만족합니다.",
+    "label": "positive",
+    "topics": [
+      "AS",
+      "설치"
+    ],
+    "topic_sentiments": {
+      "AS": "positive",
+      "설치": "positive"
+    },
+    "keywords": [
+      "에어컨",
+      "설치",
+      "AS",
+      "친절"
+    ],
+    "product_mentions": [
+      "에어컨"
+    ],
+    "note": "제품보다 서비스 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "에어컨 설치 기사님이 너무 친절하셨어요. 설치도 깔끔하고 AS도 빠르고 만족합니다."
+  },
+  {
+    "id": "ko_pos_003",
+    "text": "세탁기 소음이 진짜 없어요. 밤에 돌려도 옆방에서 모를 정도",
+    "label": "positive",
+    "topics": [
+      "소음"
+    ],
+    "topic_sentiments": {
+      "소음": "positive"
+    },
+    "keywords": [
+      "세탁기",
+      "소음"
+    ],
+    "product_mentions": [
+      "세탁기"
+    ],
+    "note": "단기 칭찬, 짧지만 명확한 긍정",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "세탁기 소음이 진짜 없어요. 밤에 돌려도 옆방에서 모를 정도"
+  },
+  {
+    "id": "ko_pos_004",
+    "text": "디자인이 너무 예뻐서 주방 인테리어가 다 살아났어요. 기능도 좋은데 보기도 좋으니 최고네요.",
+    "label": "positive",
+    "topics": [
+      "디자인",
+      "기능"
+    ],
+    "topic_sentiments": {
+      "디자인": "positive",
+      "기능": "positive"
+    },
+    "keywords": [
+      "디자인",
+      "인테리어",
+      "기능"
+    ],
+    "product_mentions": [],
+    "note": "디자인 + 기능 복합 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "디자인이 너무 예뻐서 주방 인테리어가 다 살아났어요. 기능도 좋은데 보기도 좋으니 최고네요."
+  },
+  {
+    "id": "ko_pos_005",
+    "text": "LG 올레드 TV 구매했는데 화질이 기대 이상이에요. 영화 볼 때 극장 온 느낌",
+    "label": "positive",
+    "topics": [
+      "화질"
+    ],
+    "topic_sentiments": {
+      "화질": "positive"
+    },
+    "keywords": [
+      "올레드",
+      "TV",
+      "화질"
+    ],
+    "product_mentions": [
+      "올레드 TV"
+    ],
+    "note": "기대 초과 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "LG 올레드 TV 구매했는데 화질이 기대 이상이에요. 영화 볼 때 극장 온 느낌"
+  },
+  {
+    "id": "ko_pos_006",
+    "text": "건조기 구매하고 나서 삶의 질이 달라졌어요. 진심으로 강추합니다.",
+    "label": "positive",
+    "topics": [
+      "사용편의"
+    ],
+    "topic_sentiments": {
+      "사용편의": "positive"
+    },
+    "keywords": [
+      "건조기",
+      "삶의질",
+      "강추"
+    ],
+    "product_mentions": [
+      "건조기"
+    ],
+    "note": "삶의 질 변화 강조형 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "건조기 구매하고 나서 삶의 질이 달라졌어요. 진심으로 강추합니다."
+  },
+  {
+    "id": "ko_pos_007",
+    "text": "고장 나서 AS 신청했는데 다음날 바로 오셨어요. 이런 서비스면 다음에도 LG 살 것 같아요.",
+    "label": "positive",
+    "topics": [
+      "AS"
+    ],
+    "topic_sentiments": {
+      "AS": "positive"
+    },
+    "keywords": [
+      "AS",
+      "고장",
+      "서비스"
+    ],
+    "product_mentions": [],
+    "note": "AS 경험 긍정 → 브랜드 재구매 의향",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "고장 나서 AS 신청했는데 다음날 바로 오셨어요. 이런 서비스면 다음에도 LG 살 것 같아요."
+  },
+  {
+    "id": "ko_pos_008",
+    "text": "스타일러 쓴 지 6개월인데 옷 관리가 너무 편해졌어요. 드라이 비용도 많이 줄었고요.",
+    "label": "positive",
+    "topics": [
+      "사용편의",
+      "경제성"
+    ],
+    "topic_sentiments": {
+      "사용편의": "positive",
+      "경제성": "positive"
+    },
+    "keywords": [
+      "스타일러",
+      "옷관리",
+      "드라이"
+    ],
+    "product_mentions": [
+      "스타일러"
+    ],
+    "note": "실용적 이득 강조형",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "스타일러 쓴 지 6개월인데 옷 관리가 너무 편해졌어요. 드라이 비용도 많이 줄었고요."
+  },
+  {
+    "id": "ko_pos_009",
+    "text": "냉장고 냄새 차단 기능이 생각보다 훨씬 잘 돼요. 김치 넣어도 다른 음식에 냄새 안 배요.",
+    "label": "positive",
+    "topics": [
+      "냄새차단",
+      "기능"
+    ],
+    "topic_sentiments": {
+      "냄새차단": "positive",
+      "기능": "positive"
+    },
+    "keywords": [
+      "냉장고",
+      "냄새",
+      "김치"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "특정 기능 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "냉장고 냄새 차단 기능이 생각보다 훨씬 잘 돼요. 김치 넣어도 다른 음식에 냄새 안 배요."
+  },
+  {
+    "id": "ko_pos_010",
+    "text": "전기세 걱정했는데 에너지 효율이 좋아서 오히려 전기세 줄었어요. 만족합니다.",
+    "label": "positive",
+    "topics": [
+      "에너지효율",
+      "경제성"
+    ],
+    "topic_sentiments": {
+      "에너지효율": "positive",
+      "경제성": "positive"
+    },
+    "keywords": [
+      "전기세",
+      "에너지효율"
+    ],
+    "product_mentions": [],
+    "note": "경제성 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "전기세 걱정했는데 에너지 효율이 좋아서 오히려 전기세 줄었어요. 만족합니다."
+  },
+  {
+    "id": "ko_pos_011",
+    "text": "처음엔 비싸다 싶었는데 써보니까 가격값 한다는 걸 느껴요. 역시 LG",
+    "label": "positive",
+    "topics": [
+      "가격대비성능"
+    ],
+    "topic_sentiments": {
+      "가격대비성능": "positive"
+    },
+    "keywords": [
+      "가격",
+      "가성비"
+    ],
+    "product_mentions": [],
+    "note": "가격 저항 → 만족 전환형",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "처음엔 비싸다 싶었는데 써보니까 가격값 한다는 걸 느껴요. 역시 LG"
+  },
+  {
+    "id": "ko_pos_012",
+    "text": "앱 연동이 너무 편해요. 외출 중에 에어컨 끄는 거 깜빡해도 폰으로 바로 끌 수 있어서 좋아요.",
+    "label": "positive",
+    "topics": [
+      "스마트기능",
+      "앱연동"
+    ],
+    "topic_sentiments": {
+      "스마트기능": "positive",
+      "앱연동": "positive"
+    },
+    "keywords": [
+      "앱",
+      "에어컨",
+      "스마트홈"
+    ],
+    "product_mentions": [
+      "에어컨"
+    ],
+    "note": "스마트 기능 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "앱 연동이 너무 편해요. 외출 중에 에어컨 끄는 거 깜빡해도 폰으로 바로 끌 수 있어서 좋아요."
+  },
+  {
+    "id": "ko_pos_013",
+    "text": "배송이 예상보다 빨리 왔고 포장도 완벽했어요. 제품도 흠집 없이 깨끗하게 도착",
+    "label": "positive",
+    "topics": [
+      "배송"
+    ],
+    "topic_sentiments": {
+      "배송": "positive"
+    },
+    "keywords": [
+      "배송",
+      "포장"
+    ],
+    "product_mentions": [],
+    "note": "구매 경험(배송) 만족, 제품 자체 언급 없음",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "배송이 예상보다 빨리 왔고 포장도 완벽했어요. 제품도 흠집 없이 깨끗하게 도착"
+  },
+  {
+    "id": "ko_pos_014",
+    "text": "10년 쓴 삼성 버리고 LG로 바꿨는데 후회 없어요. 진작 바꿀 걸",
+    "label": "positive",
+    "topics": [
+      "브랜드전환"
+    ],
+    "topic_sentiments": {
+      "브랜드전환": "positive"
+    },
+    "keywords": [
+      "삼성",
+      "LG",
+      "브랜드전환"
+    ],
+    "product_mentions": [],
+    "note": "경쟁사 비교 후 LG 긍정 — 민감할 수 있으나 긍정 레이블",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "10년 쓴 삼성 버리고 LG로 바꿨는데 후회 없어요. 진작 바꿀 걸"
+  },
+  {
+    "id": "ko_pos_015",
+    "text": "고객센터 상담사분이 너무 친절하고 문제를 빠르게 해결해줬어요. 감사합니다.",
+    "label": "positive",
+    "topics": [
+      "고객센터"
+    ],
+    "topic_sentiments": {
+      "고객센터": "positive"
+    },
+    "keywords": [
+      "고객센터",
+      "상담",
+      "친절"
+    ],
+    "product_mentions": [],
+    "note": "서비스(고객센터) 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "고객센터 상담사분이 너무 친절하고 문제를 빠르게 해결해줬어요. 감사합니다."
+  },
+  {
+    "id": "ko_pos_016",
+    "text": "오래된 모델인데도 부품 수급이 되더라고요. LG가 사후관리를 잘 한다는 걸 느꼈어요.",
+    "label": "positive",
+    "topics": [
+      "AS",
+      "부품"
+    ],
+    "topic_sentiments": {
+      "AS": "positive",
+      "부품": "positive"
+    },
+    "keywords": [
+      "부품",
+      "사후관리",
+      "AS"
+    ],
+    "product_mentions": [],
+    "note": "장기 AS 지원에 대한 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "오래된 모델인데도 부품 수급이 되더라고요. LG가 사후관리를 잘 한다는 걸 느꼈어요."
+  },
+  {
+    "id": "ko_pos_017",
+    "text": "냉장고 용량이 생각보다 훨씬 크게 느껴져요. 4인 가족인데 넉넉하게 쓰고 있어요.",
+    "label": "positive",
+    "topics": [
+      "용량"
+    ],
+    "topic_sentiments": {
+      "용량": "positive"
+    },
+    "keywords": [
+      "냉장고",
+      "용량",
+      "4인가족"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "기능 만족 (용량)",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "냉장고 용량이 생각보다 훨씬 크게 느껴져요. 4인 가족인데 넉넉하게 쓰고 있어요."
+  },
+  {
+    "id": "ko_pos_018",
+    "text": "매뉴얼 없이도 직관적으로 쓸 수 있어요. UI가 정말 잘 만들어져 있네요.",
+    "label": "positive",
+    "topics": [
+      "사용편의",
+      "UI"
+    ],
+    "topic_sentiments": {
+      "사용편의": "positive",
+      "UI": "positive"
+    },
+    "keywords": [
+      "UI",
+      "직관적",
+      "매뉴얼"
+    ],
+    "product_mentions": [],
+    "note": "사용 편의성 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "매뉴얼 없이도 직관적으로 쓸 수 있어요. UI가 정말 잘 만들어져 있네요."
+  },
+  {
+    "id": "ko_pos_019",
+    "text": "청소기 흡입력이 장난 아니에요. 반려동물 털도 한 번에 다 빨려요.",
+    "label": "positive",
+    "topics": [
+      "흡입력",
+      "성능"
+    ],
+    "topic_sentiments": {
+      "흡입력": "positive",
+      "성능": "positive"
+    },
+    "keywords": [
+      "청소기",
+      "흡입력",
+      "반려동물털"
+    ],
+    "product_mentions": [
+      "청소기"
+    ],
+    "note": "성능 강조형 칭찬",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "청소기 흡입력이 장난 아니에요. 반려동물 털도 한 번에 다 빨려요."
+  },
+  {
+    "id": "ko_pos_020",
+    "text": "작년에 산 건데 아직도 처음 샀을 때랑 성능 차이가 없어요. 내구성 믿을 만하네요.",
+    "label": "positive",
+    "topics": [
+      "내구성"
+    ],
+    "topic_sentiments": {
+      "내구성": "positive"
+    },
+    "keywords": [
+      "내구성",
+      "성능유지"
+    ],
+    "product_mentions": [],
+    "note": "시간 경과 후 내구성 만족",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "작년에 산 건데 아직도 처음 샀을 때랑 성능 차이가 없어요. 내구성 믿을 만하네요."
+  },
+  {
+    "id": "ko_neg_001",
+    "text": "산 지 6개월도 안 됐는데 고장났어요. 이게 말이 되나요? 환불 요청했습니다.",
+    "label": "negative",
+    "topics": [
+      "고장",
+      "내구성"
+    ],
+    "topic_sentiments": {
+      "고장": "negative",
+      "내구성": "negative"
+    },
+    "keywords": [
+      "고장",
+      "환불",
+      "6개월"
+    ],
+    "product_mentions": [],
+    "note": "초기 고장 — 가장 전형적인 부정",
+    "is_inquiry": false,
+    "is_rhetorical": true,
+    "summary": "산 지 6개월도 안 됐는데 고장났어요. 이게 말이 되나요? 환불 요청했습니다."
+  },
+  {
+    "id": "ko_neg_002",
+    "text": "AS 신청하고 2주째 연락이 없어요. 고객센터 전화해도 계속 대기 중이라고만 하고. 진짜 화납니다.",
+    "label": "negative",
+    "topics": [
+      "AS",
+      "고객센터"
+    ],
+    "topic_sentiments": {
+      "AS": "negative",
+      "고객센터": "negative"
+    },
+    "keywords": [
+      "AS",
+      "고객센터",
+      "대기",
+      "연락"
+    ],
+    "product_mentions": [],
+    "note": "AS 지연 불만 — 서비스 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "AS 신청하고 2주째 연락이 없어요. 고객센터 전화해도 계속 대기 중이라고만 하고. 진짜 화납니다."
+  },
+  {
+    "id": "ko_neg_003",
+    "text": "냉장고 소음이 너무 심해요. 밤에 잠을 못 잘 정도예요. 이 가격에 이런 소음이라니 실망입니다.",
+    "label": "negative",
+    "topics": [
+      "소음",
+      "가격대비성능"
+    ],
+    "topic_sentiments": {
+      "소음": "negative",
+      "가격대비성능": "negative"
+    },
+    "keywords": [
+      "냉장고",
+      "소음",
+      "실망",
+      "가격"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "소음 불만 — positive ko_pos_003과 대조되는 케이스",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "냉장고 소음이 너무 심해요. 밤에 잠을 못 잘 정도예요. 이 가격에 이런 소음이라니 실망입니다."
+  },
+  {
+    "id": "ko_neg_004",
+    "text": "설명서가 너무 불친절해요. 기능이 많은 건 좋은데 어떻게 쓰는지 도저히 모르겠어요.",
+    "label": "negative",
+    "topics": [
+      "사용편의",
+      "설명서"
+    ],
+    "topic_sentiments": {
+      "사용편의": "negative",
+      "설명서": "negative"
+    },
+    "keywords": [
+      "설명서",
+      "기능",
+      "불친절"
+    ],
+    "product_mentions": [],
+    "note": "UX/설명서 불만 — 기능 많은 건 neutral이지만 전체는 negative",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "설명서가 너무 불친절해요. 기능이 많은 건 좋은데 어떻게 쓰는지 도저히 모르겠어요."
+  },
+  {
+    "id": "ko_neg_005",
+    "text": "에어컨 설치 기사가 와서 벽에 구멍을 잘못 뚫어서 도배를 다시 해야 했어요. 보상도 안 해줘요.",
+    "label": "negative",
+    "topics": [
+      "설치",
+      "AS"
+    ],
+    "topic_sentiments": {
+      "설치": "negative",
+      "AS": "negative"
+    },
+    "keywords": [
+      "에어컨",
+      "설치",
+      "보상",
+      "구멍"
+    ],
+    "product_mentions": [
+      "에어컨"
+    ],
+    "note": "설치 사고 + 보상 거부 — 심각한 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "에어컨 설치 기사가 와서 벽에 구멍을 잘못 뚫어서 도배를 다시 해야 했어요. 보상도 안 해줘요."
+  },
+  {
+    "id": "ko_neg_006",
+    "text": "전기세가 오히려 더 나왔어요. 에너지 효율 1등급이라 기대했는데 완전 낚였네요.",
+    "label": "negative",
+    "topics": [
+      "에너지효율",
+      "경제성"
+    ],
+    "topic_sentiments": {
+      "에너지효율": "negative",
+      "경제성": "negative"
+    },
+    "keywords": [
+      "전기세",
+      "에너지효율",
+      "1등급"
+    ],
+    "product_mentions": [],
+    "note": "기대 대비 실망 — positive ko_pos_010과 대조",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "전기세가 오히려 더 나왔어요. 에너지 효율 1등급이라 기대했는데 완전 낚였네요."
+  },
+  {
+    "id": "ko_neg_007",
+    "text": "앱이 너무 불안정해요. 자꾸 튕기고 연결이 끊겨서 스마트 기능을 제대로 못 쓰겠어요.",
+    "label": "negative",
+    "topics": [
+      "앱",
+      "스마트기능"
+    ],
+    "topic_sentiments": {
+      "앱": "negative",
+      "스마트기능": "negative"
+    },
+    "keywords": [
+      "앱",
+      "연결",
+      "불안정"
+    ],
+    "product_mentions": [],
+    "note": "소프트웨어/앱 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "앱이 너무 불안정해요. 자꾸 튕기고 연결이 끊겨서 스마트 기능을 제대로 못 쓰겠어요."
+  },
+  {
+    "id": "ko_neg_008",
+    "text": "배송이 일주일 넘게 걸렸어요. 설치 날짜도 계속 바뀌고 연락도 없고. 최악의 구매 경험이었습니다.",
+    "label": "negative",
+    "topics": [
+      "배송",
+      "설치"
+    ],
+    "topic_sentiments": {
+      "배송": "negative",
+      "설치": "negative"
+    },
+    "keywords": [
+      "배송",
+      "설치",
+      "연락",
+      "최악"
+    ],
+    "product_mentions": [],
+    "note": "배송/구매 경험 불만 — 제품 자체 언급 없음",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "배송이 일주일 넘게 걸렸어요. 설치 날짜도 계속 바뀌고 연락도 없고. 최악의 구매 경험이었습니다."
+  },
+  {
+    "id": "ko_neg_009",
+    "text": "세탁기 뚜껑 플라스틱이 금방 깨졌어요. 이 가격대 제품이 이렇게 마감이 허술하면 안 되죠.",
+    "label": "negative",
+    "topics": [
+      "내구성",
+      "마감품질"
+    ],
+    "topic_sentiments": {
+      "내구성": "negative",
+      "마감품질": "negative"
+    },
+    "keywords": [
+      "세탁기",
+      "플라스틱",
+      "마감",
+      "내구성"
+    ],
+    "product_mentions": [
+      "세탁기"
+    ],
+    "note": "마감/품질 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "세탁기 뚜껑 플라스틱이 금방 깨졌어요. 이 가격대 제품이 이렇게 마감이 허술하면 안 되죠."
+  },
+  {
+    "id": "ko_neg_010",
+    "text": "고장 수리 맡겼더니 부품이 없다고 몇 달째 기다리라고 해요. 이러면 그냥 버리라는 건가요?",
+    "label": "negative",
+    "topics": [
+      "AS",
+      "부품"
+    ],
+    "topic_sentiments": {
+      "AS": "negative",
+      "부품": "negative"
+    },
+    "keywords": [
+      "부품",
+      "수리",
+      "대기"
+    ],
+    "product_mentions": [],
+    "note": "부품 수급 문제 — 장기 불만",
+    "is_inquiry": false,
+    "is_rhetorical": true,
+    "summary": "고장 수리 맡겼더니 부품이 없다고 몇 달째 기다리라고 해요. 이러면 그냥 버리라는 건가요?"
+  },
+  {
+    "id": "ko_neg_011",
+    "text": "같은 증상으로 세 번째 AS 받는 중이에요. 근본 원인을 해결 안 하고 임시방편만 반복하는 느낌.",
+    "label": "negative",
+    "topics": [
+      "AS",
+      "품질"
+    ],
+    "topic_sentiments": {
+      "AS": "negative",
+      "품질": "negative"
+    },
+    "keywords": [
+      "AS",
+      "반복수리",
+      "임시방편"
+    ],
+    "product_mentions": [],
+    "note": "반복 고장 — 신뢰 손상형 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "같은 증상으로 세 번째 AS 받는 중이에요. 근본 원인을 해결 안 하고 임시방편만 반복하는 느낌."
+  },
+  {
+    "id": "ko_neg_012",
+    "text": "광고에서 보여준 기능이 실제로는 유료 구독이 필요하더라고요. 이건 사기 아닌가요?",
+    "label": "negative",
+    "topics": [
+      "광고",
+      "기능"
+    ],
+    "topic_sentiments": {
+      "광고": "negative",
+      "기능": "negative"
+    },
+    "keywords": [
+      "광고",
+      "유료구독",
+      "사기"
+    ],
+    "product_mentions": [],
+    "note": "광고 과장 불만 — trash의 광고 댓글과 혼동 주의 (이건 불만 내용)",
+    "is_inquiry": false,
+    "is_rhetorical": true,
+    "summary": "광고에서 보여준 기능이 실제로는 유료 구독이 필요하더라고요. 이건 사기 아닌가요?"
+  },
+  {
+    "id": "ko_neg_013",
+    "text": "냉장고 야채칸 습도 조절이 안 되는지 채소가 금방 시들어요. 예전 제품이 더 나았던 것 같아요.",
+    "label": "negative",
+    "topics": [
+      "기능",
+      "성능"
+    ],
+    "topic_sentiments": {
+      "기능": "negative",
+      "성능": "negative"
+    },
+    "keywords": [
+      "냉장고",
+      "야채칸",
+      "습도",
+      "채소"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "특정 기능 불만 — 비교적 차분한 톤",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "냉장고 야채칸 습도 조절이 안 되는지 채소가 금방 시들어요. 예전 제품이 더 나았던 것 같아요."
+  },
+  {
+    "id": "ko_neg_014",
+    "text": "환불 요청했는데 2주 넘도록 처리가 안 되고 있어요. 이거 소비자원에 신고해야 하나요?",
+    "label": "negative",
+    "topics": [
+      "환불",
+      "고객센터"
+    ],
+    "topic_sentiments": {
+      "환불": "negative",
+      "고객센터": "negative"
+    },
+    "keywords": [
+      "환불",
+      "소비자원",
+      "신고"
+    ],
+    "product_mentions": [],
+    "note": "환불/법적 조치 언급 — 심각한 불만",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "환불 요청했는데 2주 넘도록 처리가 안 되고 있어요. 이거 소비자원에 신고해야 하나요?"
+  },
+  {
+    "id": "ko_neg_015",
+    "text": "TV 패널에 줄이 생겼는데 AS 센터에서 사용자 과실이라고 하네요. 건드린 적도 없는데요.",
+    "label": "negative",
+    "topics": [
+      "AS",
+      "품질"
+    ],
+    "topic_sentiments": {
+      "AS": "negative",
+      "품질": "negative"
+    },
+    "keywords": [
+      "TV",
+      "패널",
+      "줄",
+      "과실"
+    ],
+    "product_mentions": [
+      "TV"
+    ],
+    "note": "AS 센터와 책임 분쟁 — 억울함 표현",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "TV 패널에 줄이 생겼는데 AS 센터에서 사용자 과실이라고 하네요. 건드린 적도 없는데요."
+  },
+  {
+    "id": "ko_neg_016",
+    "text": "청소기 필터 교체 비용이 너무 비싸요. 본체보다 유지비가 더 들 것 같아요.",
+    "label": "negative",
+    "topics": [
+      "유지비",
+      "소모품"
+    ],
+    "topic_sentiments": {
+      "유지비": "negative",
+      "소모품": "negative"
+    },
+    "keywords": [
+      "청소기",
+      "필터",
+      "교체비용",
+      "유지비"
+    ],
+    "product_mentions": [
+      "청소기"
+    ],
+    "note": "유지비 불만 — 구매 후 경제성 실망",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "청소기 필터 교체 비용이 너무 비싸요. 본체보다 유지비가 더 들 것 같아요."
+  },
+  {
+    "id": "ko_neg_017",
+    "text": "설치 기사가 예약 당일에 노쇼했어요. 반차 냈는데 아무 연락도 없이 그냥 안 오면 어떡하나요.",
+    "label": "negative",
+    "topics": [
+      "설치",
+      "서비스"
+    ],
+    "topic_sentiments": {
+      "설치": "negative",
+      "서비스": "negative"
+    },
+    "keywords": [
+      "설치",
+      "노쇼",
+      "예약",
+      "연락"
+    ],
+    "product_mentions": [],
+    "note": "설치 기사 노쇼 — 서비스 신뢰 손상",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "설치 기사가 예약 당일에 노쇼했어요. 반차 냈는데 아무 연락도 없이 그냥 안 오면 어떡하나요."
+  },
+  {
+    "id": "ko_neg_018",
+    "text": "냄새가 이상해요. 새 제품인데 플라스틱 냄새가 너무 심해서 사용하기가 꺼려져요.",
+    "label": "negative",
+    "topics": [
+      "냄새",
+      "품질"
+    ],
+    "topic_sentiments": {
+      "냄새": "negative",
+      "품질": "negative"
+    },
+    "keywords": [
+      "냄새",
+      "플라스틱",
+      "새제품"
+    ],
+    "product_mentions": [],
+    "note": "냄새 불만 — 비교적 가벼운 불만이지만 명확히 부정",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "냄새가 이상해요. 새 제품인데 플라스틱 냄새가 너무 심해서 사용하기가 꺼려져요."
+  },
+  {
+    "id": "ko_neg_019",
+    "text": "동생이랑 같은 모델 샀는데 제 거만 이런 문제가 있어요. 불량품 받은 것 같아요.",
+    "label": "negative",
+    "topics": [
+      "불량",
+      "품질"
+    ],
+    "topic_sentiments": {
+      "불량": "negative",
+      "품질": "negative"
+    },
+    "keywords": [
+      "불량",
+      "불량품"
+    ],
+    "product_mentions": [],
+    "note": "불량품 의심 — 비교 대상(동생) 언급",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "동생이랑 같은 모델 샀는데 제 거만 이런 문제가 있어요. 불량품 받은 것 같아요."
+  },
+  {
+    "id": "ko_neg_020",
+    "text": "디자인은 예쁜데 실용성이 너무 떨어져요. 보기 좋은 떡이 먹기는 나쁜 케이스네요.",
+    "label": "negative",
+    "topics": [
+      "디자인",
+      "기능"
+    ],
+    "topic_sentiments": {
+      "디자인": "positive",
+      "기능": "negative"
+    },
+    "keywords": [
+      "디자인",
+      "실용성"
+    ],
+    "product_mentions": [],
+    "note": "혼재 감성 대표 케이스 — 디자인 positive, 기능 negative, label은 negative 우선",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "디자인은 예쁜데 실용성이 너무 떨어져요. 보기 좋은 떡이 먹기는 나쁜 케이스네요."
+  },
+  {
+    "id": "ko_neg_021",
+    "text": "소음 때문에 반품하려고 했더니 개봉품이라 안 된다고 해요. 이거 완전 소비자 불리한 정책 아닌가요.",
+    "label": "negative",
+    "topics": [
+      "소음",
+      "반품정책"
+    ],
+    "topic_sentiments": {
+      "소음": "negative",
+      "반품정책": "negative"
+    },
+    "keywords": [
+      "소음",
+      "반품",
+      "개봉품",
+      "정책"
+    ],
+    "product_mentions": [],
+    "note": "반품 정책 불만 — 소음+정책 복합",
+    "is_inquiry": false,
+    "is_rhetorical": true,
+    "summary": "소음 때문에 반품하려고 했더니 개봉품이라 안 된다고 해요. 이거 완전 소비자 불리한 정책 아닌가요."
+  },
+  {
+    "id": "ko_neg_022",
+    "text": "와이파이 연결이 자꾸 끊겨요. 공유기 바꿔도 마찬가지. 펌웨어 업데이트도 해봤는데 소용없음.",
+    "label": "negative",
+    "topics": [
+      "연결성",
+      "스마트기능"
+    ],
+    "topic_sentiments": {
+      "연결성": "negative",
+      "스마트기능": "negative"
+    },
+    "keywords": [
+      "와이파이",
+      "연결",
+      "펌웨어"
+    ],
+    "product_mentions": [],
+    "note": "기술적 문제 — 사용자가 직접 해결 시도한 케이스",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "와이파이 연결이 자꾸 끊겨요. 공유기 바꿔도 마찬가지. 펌웨어 업데이트도 해봤는데 소용없음."
+  },
+  {
+    "id": "ko_neg_023",
+    "text": "가격 대비 실망이에요. 같은 돈이면 다른 브랜드가 훨씬 나을 것 같아요.",
+    "label": "negative",
+    "topics": [
+      "가격대비성능"
+    ],
+    "topic_sentiments": {
+      "가격대비성능": "negative"
+    },
+    "keywords": [
+      "가격",
+      "실망",
+      "브랜드"
+    ],
+    "product_mentions": [],
+    "note": "가성비 불만 — 차분하지만 명확한 부정",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "가격 대비 실망이에요. 같은 돈이면 다른 브랜드가 훨씬 나을 것 같아요."
+  },
+  {
+    "id": "ko_neg_024",
+    "text": "챗봇 상담은 쓸모가 없어요. 같은 말만 반복하고 사람 연결도 안 해줘요. 진짜 답답하다.",
+    "label": "negative",
+    "topics": [
+      "고객센터",
+      "챗봇"
+    ],
+    "topic_sentiments": {
+      "고객센터": "negative",
+      "챗봇": "negative"
+    },
+    "keywords": [
+      "챗봇",
+      "상담",
+      "답답"
+    ],
+    "product_mentions": [],
+    "note": "디지털 CS 불만 — 제품 외 서비스 불만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "챗봇 상담은 쓸모가 없어요. 같은 말만 반복하고 사람 연결도 안 해줘요. 진짜 답답하다."
+  },
+  {
+    "id": "ko_neg_025",
+    "text": "분명히 1년 보증인데 11개월에 고장나서 수리 요청했더니 보증 대상 아니라고 해요. 이해가 안 됩니다.",
+    "label": "negative",
+    "topics": [
+      "보증",
+      "AS"
+    ],
+    "topic_sentiments": {
+      "보증": "negative",
+      "AS": "negative"
+    },
+    "keywords": [
+      "보증",
+      "수리",
+      "1년",
+      "11개월"
+    ],
+    "product_mentions": [],
+    "note": "보증 정책 분쟁 — 억울함 + 불신",
+    "is_inquiry": false,
+    "is_rhetorical": true,
+    "summary": "분명히 1년 보증인데 11개월에 고장나서 수리 요청했더니 보증 대상 아니라고 해요. 이해가 안 됩니다."
+  },
+  {
+    "id": "ko_neu_001",
+    "text": "이 모델 용량이 몇 리터예요?",
+    "label": "neutral",
+    "topics": [
+      "용량"
+    ],
+    "topic_sentiments": {
+      "용량": "neutral"
+    },
+    "keywords": [
+      "용량",
+      "리터"
+    ],
+    "product_mentions": [],
+    "note": "단순 스펙 질문 — 감정 없음",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "이 모델 용량이 몇 리터예요?"
+  },
+  {
+    "id": "ko_neu_002",
+    "text": "혹시 이 에어컨 22평형에 맞는 건가요? 거실이 좀 넓어서요.",
+    "label": "neutral",
+    "topics": [
+      "스펙",
+      "평형"
+    ],
+    "topic_sentiments": {
+      "스펙": "neutral",
+      "평형": "neutral"
+    },
+    "keywords": [
+      "에어컨",
+      "22평",
+      "거실"
+    ],
+    "product_mentions": [
+      "에어컨"
+    ],
+    "note": "구매 전 스펙 확인 질문",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "혹시 이 에어컨 22평형에 맞는 건가요? 거실이 좀 넓어서요."
+  },
+  {
+    "id": "ko_neu_003",
+    "text": "세탁기 탈수 시간이 원래 이렇게 긴가요? 처음 써보는 거라서요.",
+    "label": "neutral",
+    "topics": [
+      "기능",
+      "탈수"
+    ],
+    "topic_sentiments": {
+      "기능": "neutral",
+      "탈수": "neutral"
+    },
+    "keywords": [
+      "세탁기",
+      "탈수",
+      "시간"
+    ],
+    "product_mentions": [
+      "세탁기"
+    ],
+    "note": "사용법 질문 — 불만인지 단순 궁금증인지 판단 경계선. neutral로 분류",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "세탁기 탈수 시간이 원래 이렇게 긴가요? 처음 써보는 거라서요."
+  },
+  {
+    "id": "ko_neu_004",
+    "text": "AS 신청은 어디서 하나요? 홈페이지에서 하면 되나요?",
+    "label": "neutral",
+    "topics": [
+      "AS"
+    ],
+    "topic_sentiments": {
+      "AS": "neutral"
+    },
+    "keywords": [
+      "AS",
+      "신청",
+      "홈페이지"
+    ],
+    "product_mentions": [],
+    "note": "AS 절차 문의 — 불만 없음, 정보 요청",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "AS 신청은 어디서 하나요? 홈페이지에서 하면 되나요?"
+  },
+  {
+    "id": "ko_neu_005",
+    "text": "냉장고 필터 교체 주기가 어떻게 되나요?",
+    "label": "neutral",
+    "topics": [
+      "소모품",
+      "유지관리"
+    ],
+    "topic_sentiments": {
+      "소모품": "neutral",
+      "유지관리": "neutral"
+    },
+    "keywords": [
+      "냉장고",
+      "필터",
+      "교체주기"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "유지관리 정보 요청",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "냉장고 필터 교체 주기가 어떻게 되나요?"
+  },
+  {
+    "id": "ko_neu_006",
+    "text": "LG 건조기랑 삼성 건조기 중에 어떤 게 더 나을지 고민 중이에요.",
+    "label": "neutral",
+    "topics": [
+      "구매고민"
+    ],
+    "topic_sentiments": {
+      "구매고민": "neutral"
+    },
+    "keywords": [
+      "건조기",
+      "삼성",
+      "LG",
+      "비교"
+    ],
+    "product_mentions": [
+      "건조기"
+    ],
+    "note": "브랜드 비교 — 아직 감성 없음, 구매 전 단계",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "LG 건조기랑 삼성 건조기 중에 어떤 게 더 나을지 고민 중이에요."
+  },
+  {
+    "id": "ko_neu_007",
+    "text": "이 제품 색상이 베이지랑 화이트 두 가지인가요?",
+    "label": "neutral",
+    "topics": [
+      "디자인",
+      "색상"
+    ],
+    "topic_sentiments": {
+      "디자인": "neutral",
+      "색상": "neutral"
+    },
+    "keywords": [
+      "색상",
+      "베이지",
+      "화이트"
+    ],
+    "product_mentions": [],
+    "note": "단순 옵션 확인 질문",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "이 제품 색상이 베이지랑 화이트 두 가지인가요?"
+  },
+  {
+    "id": "ko_neu_008",
+    "text": "어제 배송 받았어요. 내일 설치 예정입니다.",
+    "label": "neutral",
+    "topics": [
+      "배송",
+      "설치"
+    ],
+    "topic_sentiments": {
+      "배송": "neutral",
+      "설치": "neutral"
+    },
+    "keywords": [
+      "배송",
+      "설치"
+    ],
+    "product_mentions": [],
+    "note": "상황 보고형 — 감정 없음, 사실 전달만",
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "summary": "어제 배송 받았어요. 내일 설치 예정입니다."
+  },
+  {
+    "id": "ko_neu_009",
+    "text": "이 모델 출시된 지 얼마나 됐나요? 후속 모델 나올 것 같으면 기다려볼까 해서요.",
+    "label": "neutral",
+    "topics": [
+      "구매고민",
+      "신제품"
+    ],
+    "topic_sentiments": {
+      "구매고민": "neutral",
+      "신제품": "neutral"
+    },
+    "keywords": [
+      "출시",
+      "후속모델",
+      "신제품"
+    ],
+    "product_mentions": [],
+    "note": "구매 타이밍 고민 — 감정 없음",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "이 모델 출시된 지 얼마나 됐나요? 후속 모델 나올 것 같으면 기다려볼까 해서요."
+  },
+  {
+    "id": "ko_neu_010",
+    "text": "전압이 220V 맞죠? 해외 제품 아닌 거 확인하고 싶어서요.",
+    "label": "neutral",
+    "topics": [
+      "스펙"
+    ],
+    "topic_sentiments": {
+      "스펙": "neutral"
+    },
+    "keywords": [
+      "전압",
+      "220V",
+      "해외제품"
+    ],
+    "product_mentions": [],
+    "note": "스펙 확인 질문 — 매우 단순",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "전압이 220V 맞죠? 해외 제품 아닌 거 확인하고 싶어서요."
+  },
+  {
+    "id": "ko_neu_011",
+    "text": "냉장고 문 경첩 방향 바꿀 수 있나요? 주방 구조상 왼쪽으로 열려야 해서요.",
+    "label": "neutral",
+    "topics": [
+      "설치",
+      "기능"
+    ],
+    "topic_sentiments": {
+      "설치": "neutral",
+      "기능": "neutral"
+    },
+    "keywords": [
+      "냉장고",
+      "경첩",
+      "문방향"
+    ],
+    "product_mentions": [
+      "냉장고"
+    ],
+    "note": "설치 관련 기능 문의",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "냉장고 문 경첩 방향 바꿀 수 있나요? 주방 구조상 왼쪽으로 열려야 해서요."
+  },
+  {
+    "id": "ko_neu_012",
+    "text": "이 세탁기 드럼 사이즈가 몇 kg짜리인가요? 16kg이랑 21kg 중에 어떤 걸 사야 할지",
+    "label": "neutral",
+    "topics": [
+      "스펙",
+      "용량"
+    ],
+    "topic_sentiments": {
+      "스펙": "neutral",
+      "용량": "neutral"
+    },
+    "keywords": [
+      "세탁기",
+      "드럼",
+      "16kg",
+      "21kg"
+    ],
+    "product_mentions": [
+      "세탁기"
+    ],
+    "note": "용량 선택 고민 — 감정 없음",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "이 세탁기 드럼 사이즈가 몇 kg짜리인가요? 16kg이랑 21kg 중에 어떤 걸 사야 할지"
+  },
+  {
+    "id": "ko_neu_013",
+    "text": "영상에서 나온 제품 모델명이 뭔가요? 링크나 모델명 알려주시면 감사하겠습니다.",
+    "label": "neutral",
+    "topics": [
+      "제품정보"
+    ],
+    "topic_sentiments": {
+      "제품정보": "neutral"
+    },
+    "keywords": [
+      "모델명",
+      "제품정보"
+    ],
+    "product_mentions": [],
+    "note": "영상 내 제품 정보 요청 — YouTube 댓글 전형적 패턴",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "영상에서 나온 제품 모델명이 뭔가요? 링크나 모델명 알려주시면 감사하겠습니다."
+  },
+  {
+    "id": "ko_neu_014",
+    "text": "공식 판매처에서 사는 거랑 오픈마켓에서 사는 거랑 AS 차이 있나요?",
+    "label": "neutral",
+    "topics": [
+      "AS",
+      "구매처"
+    ],
+    "topic_sentiments": {
+      "AS": "neutral",
+      "구매처": "neutral"
+    },
+    "keywords": [
+      "공식판매처",
+      "오픈마켓",
+      "AS"
+    ],
+    "product_mentions": [],
+    "note": "구매 채널 비교 문의",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "공식 판매처에서 사는 거랑 오픈마켓에서 사는 거랑 AS 차이 있나요?"
+  },
+  {
+    "id": "ko_neu_015",
+    "text": "설치비가 별도인가요? 구매할 때 포함되는 건지 궁금해요.",
+    "label": "neutral",
+    "topics": [
+      "설치",
+      "비용"
+    ],
+    "topic_sentiments": {
+      "설치": "neutral",
+      "비용": "neutral"
+    },
+    "keywords": [
+      "설치비",
+      "포함여부"
+    ],
+    "product_mentions": [],
+    "note": "비용 구성 문의 — 불만 없음",
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "summary": "설치비가 별도인가요? 구매할 때 포함되는 건지 궁금해요."
+  },
+  {
+    "id": "ko_tra_001",
+    "text": "ㅋㅋㅋㅋㅋㅋ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "자음 나열 — 감정 표현도 아닌 의미 없는 입력"
+  },
+  {
+    "id": "ko_tra_002",
+    "text": "좋아요",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "단어 1개 — 맥락 없는 단순 반응. undecidable과 경계선이나 의도적 무의미로 trash"
+  },
+  {
+    "id": "ko_tra_003",
+    "text": "구독하고 갑니다~ 맞구독 환영해요!",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "구독 유도 광고 — 전형적인 YouTube 스팸"
+  },
+  {
+    "id": "ko_tra_004",
+    "text": "첫 번째 댓글!",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "선점 댓글 — 콘텐츠와 무관한 의미 없는 댓글"
+  },
+  {
+    "id": "ko_tra_005",
+    "text": "제 채널에 오시면 LG 가전 할인 쿠폰 드려요~ 링크는 프로필에!",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "광고성 스팸 — 외부 링크 유도"
+  },
+  {
+    "id": "ko_tra_006",
+    "text": "ㅎㅎ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "자음 2개 — 내용 없음"
+  },
+  {
+    "id": "ko_tra_007",
+    "text": "👍👍👍👍👍",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "이모지만 나열 — 텍스트 분석 불가, 의미 없음"
+  },
+  {
+    "id": "ko_tra_008",
+    "text": "진짜 좋다 진짜 좋다 진짜 좋다 진짜 좋다",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "의미 없는 반복 — 봇 또는 도배성 댓글"
+  },
+  {
+    "id": "ko_tra_009",
+    "text": "여기 보는 사람 다 부자 되세요^^",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "덕담형 스팸 — 제품/서비스와 무관"
+  },
+  {
+    "id": "ko_tra_010",
+    "text": "알고리즘 타고 왔어요",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "유입 경로 언급 — VoC 분석에 무의미"
+  },
+  {
+    "id": "ko_tra_011",
+    "text": "LG전자 주가 언제 오르냐ㅋ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "주식 언급 — 제품/서비스와 무관한 잡담"
+  },
+  {
+    "id": "ko_tra_012",
+    "text": "aaaaaaaaaaaa",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "알파벳 반복 나열 — 키보드 연타"
+  },
+  {
+    "id": "ko_tra_013",
+    "text": "팔로우하면 맞팔해드립니다",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "팔로우 유도 스팸"
+  },
+  {
+    "id": "ko_tra_014",
+    "text": "오늘 날씨 진짜 좋네요",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "완전 무관한 일상 잡담"
+  },
+  {
+    "id": "ko_tra_015",
+    "text": "ㄷㄷㄷ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "자음 나열 — 의미 불명확"
+  },
+  {
+    "id": "ko_tra_016",
+    "text": "영상 잘 봤습니다",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "영상 반응 — 제품/서비스 언급 없는 의례적 표현. positive와 경계선이나 VoC 분석 가치 없음"
+  },
+  {
+    "id": "ko_tra_017",
+    "text": "광고 skip하고 왔어요 ㅎㅎ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "광고 스킵 언급 — 콘텐츠 소비 패턴 언급, VoC 무관"
+  },
+  {
+    "id": "ko_tra_018",
+    "text": "삼성이 더 낫지 않냐? LG팬들아 ㅋㅋ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "브랜드 분쟁 유발 어그로 — 구체적 제품 경험 없음, 분석 가치 없음"
+  },
+  {
+    "id": "ko_tra_019",
+    "text": "ㅠㅠ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "이모티콘 유사 자음 — 감정 표현이라고 볼 수도 있으나 맥락 없어 trash"
+  },
+  {
+    "id": "ko_tra_020",
+    "text": "1등",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "선점 댓글 변형 — 의미 없음"
+  },
+  {
+    "id": "ko_tra_021",
+    "text": "이 영상 보고 LG 주식 사야겠다",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "주식 잡담 — 제품 경험과 무관"
+  },
+  {
+    "id": "ko_tra_022",
+    "text": "와 대박이다 대박 대박 ㄷㄷ",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "감탄사 반복 — 구체적 내용 없음. positive와 혼동 주의"
+  },
+  {
+    "id": "ko_tra_023",
+    "text": "여러분 제 최근 영상도 봐주세요~ 비슷한 리뷰 올렸어요",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "자기 채널 홍보 스팸"
+  },
+  {
+    "id": "ko_tra_024",
+    "text": "LG 화이팅!!!! 💪💪💪",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "응원 구호 + 이모지 — 제품 경험 없는 의례적 표현. positive로 오분류 주의"
+  },
+  {
+    "id": "ko_tra_025",
+    "text": "저 이거 어디서 살 수 있어요? 쿠팡이요 롯데하이마트요?",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "구매처 문의 — neutral/inquiry처럼 보이나 제품 경험이 전혀 없는 단순 구매 채널 질문. VoC 분석 가치 없음으로 trash 처리. 운영 정책에 따라 neutral로 볼 수도 있는 경계 케이스"
+  },
+  {
+    "id": "ko_tra_026",
+    "text": "냉장고 세탁기 에어컨 건조기 청소기 TV 스타일러 식기세척기 공기청정기 정수기 전자레인지 오븐 인덕션 냉장고 세탁기 에어컨",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "제품명 단순 나열 — 문장 아님, 의도 불명, 봇 또는 키워드 스터핑"
+  },
+  {
+    "id": "ko_tra_027",
+    "text": "좋아요 싫어요 구독 알림 공유 댓글 좋아요 싫어요 구독 알림 공유 댓글 좋아요 싫어요 구독",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "YouTube UI 단어 반복 나열 — 봇성 도배"
+  },
+  {
+    "id": "ko_tra_028",
+    "text": "LG 삼성 소니 애플 구글 마이크로소프트 삼성 LG 소니 애플 구글 LG 삼성 소니 애플 LG",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "브랜드명 반복 나열 — 키워드 스터핑 또는 어그로 유발용"
+  },
+  {
+    "id": "ko_tra_029",
+    "text": "가격 할인 최저가 무료배송 쿠폰 적립금 포인트 이벤트 사은품 가격 할인 최저가 무료배송 쿠폰 적립금 포인트 이벤트 사은품 가격 할인",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "쇼핑 키워드 나열 — SEO 스팸 또는 봇 생성 댓글"
+  },
+  {
+    "id": "ko_tra_030",
+    "text": "냉장고 소음 에어컨 필터 세탁기 건조기 청소기 TV 스타일러 인덕션 오븐 정수기 공기청정기 식기세척기 전자레인지 냉장고 소음 에어컨 필터 세탁기",
+    "label": "trash",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "서로 다른 단어들의 무의미한 나열 (긴 댓글) — 문장 구조 없음, 키워드 스터핑 또는 봇 생성. 동일 단어 반복이 아닌 다양한 단어 나열"
+  },
+  {
+    "id": "ko_und_001",
+    "text": "ㅇ",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "자음 1개 — 정보 전무. trash와 경계선이나 의도 판단 불가로 undecidable"
+  },
+  {
+    "id": "ko_und_002",
+    "text": "...",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "말줄임표만 — 실망/무언가 하고 싶은 말이 있을 수 있으나 판단 불가"
+  },
+  {
+    "id": "ko_und_003",
+    "text": "역시",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "단어 1개 — 긍정/부정 양방향 해석 가능. '역시 좋다'일 수도 '역시 별로'일 수도 있음"
+  },
+  {
+    "id": "ko_und_004",
+    "text": "그렇군요",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "단순 수긍 — 무엇에 대한 반응인지 맥락 없음"
+  },
+  {
+    "id": "ko_und_005",
+    "text": "저도요",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "동의 표현 — 원래 댓글 없이 단독으로는 의미 파악 불가"
+  },
+  {
+    "id": "ko_und_006",
+    "text": "맞아요 진짜",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "동의 강조 — 무엇에 동의하는지 맥락 없음. 답글로 추정되나 독립 분석 불가"
+  },
+  {
+    "id": "ko_und_007",
+    "text": "ㅋㅋ 맞음",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "동의형 답글 추정 — 맥락 없이 독립 분석 불가. trash와 경계선"
+  },
+  {
+    "id": "ko_und_008",
+    "text": "와",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "감탄사 1개 — 긍정/부정/놀람 모두 가능. 맥락 없음"
+  },
+  {
+    "id": "ko_und_009",
+    "text": "저는 좀 달랐어요",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "무언가와 비교하는 진술 — 무엇이 달랐는지 내용 없음. 답글 맥락 필요"
+  },
+  {
+    "id": "ko_und_010",
+    "text": "제 경험과는 다르네요...",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "경험 차이 언급 — 어떤 경험인지 없어서 판단 불가. 부정 가능성 있으나 확정 불가"
+  },
+  {
+    "id": "ko_und_011",
+    "text": "음...",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "망설임/고민 표현 — 방향 판단 불가"
+  },
+  {
+    "id": "ko_und_012",
+    "text": "그냥 궁금해서요",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "질문 도입부만 있고 실제 질문 내용 없음 — 문장 미완성"
+  },
+  {
+    "id": "ko_und_013",
+    "text": "LG는 LG죠",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "동어반복 — 긍정('역시 LG')일 수도 비꼼('그게 그거')일 수도 있어 판단 불가"
+  },
+  {
+    "id": "ko_und_014",
+    "text": "사람마다 다른 것 같아요",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": false,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "일반적 진술 — 무엇에 대한 이야기인지 맥락 없음. 답글로 추정"
+  },
+  {
+    "id": "ko_und_015",
+    "text": "저도 비슷한 상황인데 어떻게 하셨어요?",
+    "label": "undecidable",
+    "topics": [],
+    "topic_sentiments": {},
+    "is_inquiry": true,
+    "is_rhetorical": false,
+    "keywords": [],
+    "product_mentions": [],
+    "summary": null,
+    "note": "답글 맥락 없는 문의 — 어떤 상황인지, 어떤 제품인지 전혀 없음. is_inquiry=true이나 label은 undecidable. 맥락 없는 문의의 대표 케이스"
+  }
+]
