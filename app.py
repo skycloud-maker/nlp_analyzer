@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 def load_env():
     env_path = ROOT / ".env"
     if env_path.exists():
-        with open(env_path) as f:
+        with open(env_path, encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
