@@ -14,14 +14,31 @@ import os as _os
 from pathlib import Path as _Path
 
 def _load_env():
-    env_path = _Path(__file__).parent / ".env"
-    if env_path.exists():
-        with open(env_path, encoding="utf-8") as _f:
-            for _line in _f:
-                _line = _line.strip()
-                if _line and not _line.startswith("#") and "=" in _line:
-                    _key, _, _value = _line.partition("=")
-                    _os.environ.setdefault(_key.strip(), _value.strip())
+    def _read_env(path):
+        if path.exists():
+            with open(path, encoding="utf-8") as _f:
+                for _line in _f:
+                    _line = _line.strip()
+                    if _line and not _line.startswith("#") and "=" in _line:
+                        _key, _, _value = _line.partition("=")
+                        _os.environ.setdefault(_key.strip(), _value.strip())
+
+    # 1) 현재 모듈 위치의 .env
+    _read_env(_Path(__file__).parent / ".env")
+
+    # 2) git worktree 에서 실행 중이면 메인 레포 루트의 .env 도 탐색
+    git_common = _Path(__file__).parent / ".git"
+    if git_common.is_file():
+        # .git 이 파일이면 worktree — "gitdir: <path>" 형식
+        try:
+            content = git_common.read_text(encoding="utf-8").strip()
+            if content.startswith("gitdir:"):
+                git_dir = _Path(content.split(":", 1)[1].strip())
+                # .git/worktrees/<name> → 메인 레포 루트는 2단계 위
+                main_root = git_dir.resolve().parent.parent.parent
+                _read_env(main_root / ".env")
+        except Exception:
+            pass
 
 _load_env()
 
@@ -97,7 +114,8 @@ def _build_result(
     comment_id: str,
     raw_text: str,
     language: str,
-    provider: LLMInterface,
+    llm_provider: str,
+    model_name: str,
 ) -> AnalysisResult:
     """
     파싱된 dict 로부터 AnalysisResult 를 생성.
@@ -148,8 +166,8 @@ def _build_result(
         keywords=keywords,
         product_mentions=product_mentions,
         analyzed_at=datetime.utcnow(),
-        llm_provider=provider.provider_name,
-        model_name=provider.model_name,
+        llm_provider=llm_provider,
+        model_name=model_name,
         error=None,
     )
 
@@ -244,7 +262,7 @@ def analyze_comment(
         )
 
     # AnalysisResult 생성 (자동 보정 포함)
-    result = _build_result(parsed, comment_id, text, language, _provider)
+    result = _build_result(parsed, comment_id, text, language, response.provider, response.model_name)
 
     return result
 

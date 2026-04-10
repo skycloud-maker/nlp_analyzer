@@ -17,14 +17,29 @@ ROOT = Path(__file__).parent
 
 
 def load_env():
-    env_path = ROOT / ".env"
-    if env_path.exists():
-        with open(env_path, encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    key, _, value = line.partition("=")
-                    os.environ.setdefault(key.strip(), value.strip())
+    def _read_env(path):
+        if path.exists():
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, _, value = line.partition("=")
+                        os.environ.setdefault(key.strip(), value.strip())
+
+    # 1) 현재 디렉토리의 .env
+    _read_env(ROOT / ".env")
+
+    # 2) git worktree 에서 실행 중이면 메인 레포 루트의 .env 도 탐색
+    git_path = ROOT / ".git"
+    if git_path.is_file():
+        try:
+            content = git_path.read_text(encoding="utf-8").strip()
+            if content.startswith("gitdir:"):
+                git_dir = Path(content.split(":", 1)[1].strip())
+                main_root = git_dir.resolve().parent.parent.parent
+                _read_env(main_root / ".env")
+        except Exception:
+            pass
 
 
 def check_api_key():

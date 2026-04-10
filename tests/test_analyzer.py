@@ -42,6 +42,7 @@ from models import AnalysisResult, is_valid, validate, make_error_result
 from prompts import detect_language, build_prompt
 from providers.mock import MockProvider, EchoProvider, FailProvider
 from providers.claude import ClaudeProvider
+from router import LLMRouter
 
 
 # ─────────────────────────────────────────
@@ -295,7 +296,7 @@ def test_golden_set(golden_path: str, max_comments: int | None = None):
     if max_comments:
         golden = golden[:max_comments]
 
-    provider = ClaudeProvider()
+    provider = LLMRouter()
     total = len(golden)
     label_correct = 0
     inquiry_correct = 0
