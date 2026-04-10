@@ -7,6 +7,24 @@ nlp_analyzer/analyzer.py
 
 from __future__ import annotations
 
+# ─────────────────────────────────────────
+# .env 자동 로드 (로컬 실행 시)
+# ─────────────────────────────────────────
+import os as _os
+from pathlib import Path as _Path
+
+def _load_env():
+    env_path = _Path(__file__).parent / ".env"
+    if env_path.exists():
+        with open(env_path, encoding="utf-8") as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _key, _, _value = _line.partition("=")
+                    _os.environ.setdefault(_key.strip(), _value.strip())
+
+_load_env()
+
 import json
 from datetime import datetime
 from typing import Optional
@@ -32,8 +50,16 @@ except ImportError:
 # ─────────────────────────────────────────
 
 def _get_default_provider() -> LLMInterface:
-    """기본 Provider 반환 (Claude Primary)."""
-    return ClaudeProvider()
+    """
+    기본 Provider 반환.
+    LLMRouter 를 통해 Claude → OpenAI 순서로 자동 전환.
+    Claude 키 없으면 OpenAI 로 자동 사용.
+    """
+    try:
+        from .router import LLMRouter
+    except ImportError:
+        from router import LLMRouter
+    return LLMRouter()
 
 
 # ─────────────────────────────────────────
