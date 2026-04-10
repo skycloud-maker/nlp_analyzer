@@ -289,7 +289,7 @@ def test_golden_set(golden_path: str, max_comments: int | None = None):
         return suite
 
     # Golden Set 로드
-    with open(golden_path) as f:
+    with open(golden_path, encoding="utf-8") as f:
         golden = json.load(f)
 
     if max_comments:
