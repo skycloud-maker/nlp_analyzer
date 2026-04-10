@@ -29,14 +29,28 @@ sys.path.insert(0, str(ROOT))
 # 환경변수 로드 (.env)
 # ─────────────────────────────────────────
 def load_env():
-    env_path = ROOT / ".env"
-    if env_path.exists():
-        with open(env_path, encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    key, _, value = line.partition("=")
-                    os.environ.setdefault(key.strip(), value.strip())
+    def _read_env(path):
+        if path.exists():
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, _, value = line.partition("=")
+                        os.environ.setdefault(key.strip(), value.strip())
+
+    _read_env(ROOT / ".env")
+
+    # git worktree 에서 실행 시 메인 레포의 .env 도 탐색
+    git_path = ROOT / ".git"
+    if git_path.is_file():
+        try:
+            content = git_path.read_text(encoding="utf-8").strip()
+            if content.startswith("gitdir:"):
+                git_dir = Path(content.split(":", 1)[1].strip())
+                main_root = git_dir.resolve().parent.parent.parent
+                _read_env(main_root / ".env")
+        except Exception:
+            pass
 
 load_env()
 
@@ -173,15 +187,7 @@ with tab1:
     col_input, col_result = st.columns([1, 1], gap="large")
 
     with col_input:
-        comment_text = st.text_area(
-            "분석할 댓글을 입력하세요",
-            height=150,
-            placeholder="예) 냉장고 소음이 너무 심해요. 환불하고 싶어요.",
-            key="single_input",
-        )
-
         # 샘플 댓글
-        st.markdown('<p class="section-title">샘플 댓글</p>', unsafe_allow_html=True)
         samples = [
             ("positive",    "이 냉장고 산 지 3년 됐는데 아직도 소음 없이 잘 돌아가요."),
             ("negative",    "AS 신청하고 2주째 연락이 없어요. 진짜 화납니다."),
@@ -190,17 +196,29 @@ with tab1:
             ("trash",       "구독하고 갑니다~ 맞구독 환영해요!"),
             ("undecidable", "역시"),
         ]
+
+        def _set_sample(text):
+            st.session_state["single_input"] = text
+
+        comment_text = st.text_area(
+            "분석할 댓글을 입력하세요",
+            height=150,
+            placeholder="예) 냉장고 소음이 너무 심해요. 환불하고 싶어요.",
+            key="single_input",
+        )
+
+        st.markdown('<p class="section-title">샘플 댓글</p>', unsafe_allow_html=True)
         cols = st.columns(2)
         for i, (label, text) in enumerate(samples):
             color, bg = LABEL_COLOR.get(label, ("#94a3b8", "#0f172a"))
             with cols[i % 2]:
-                if st.button(
+                st.button(
                     f"[{LABEL_KO[label]}] {text[:18]}...",
                     key=f"sample_{i}",
                     use_container_width=True,
-                ):
-                    st.session_state["single_input"] = text
-                    st.rerun()
+                    on_click=_set_sample,
+                    args=(text,),
+                )
 
         analyze_btn = st.button("🔍 분석 실행", type="primary", use_container_width=True)
 
