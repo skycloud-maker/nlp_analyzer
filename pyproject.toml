@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nlp_analyzer"
+version = "0.1.0"
+description = "LG전자 YouTube VoC 댓글 자연어 처리 모듈"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "skycloud-maker"},
+]
+
+dependencies = [
+    "anthropic>=0.18.0",
+    "openai>=1.12.0",
+]
+
+[project.optional-dependencies]
+app = [
+    "streamlit>=1.30.0",
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[tool.setuptools]
+packages = ["nlp_analyzer", "nlp_analyzer.providers"]
+
+[tool.setuptools.package-dir]
+nlp_analyzer = "."
+"nlp_analyzer.providers" = "providers"
+
+[tool.setuptools.package-data]
+nlp_analyzer = ["tests/golden_set_ko.json"]
