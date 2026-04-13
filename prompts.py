@@ -104,6 +104,16 @@ _KO_SYSTEM_PROMPT = """\
 
 _KO_USER_TEMPLATE = Template("[분석할 댓글]\n$comment_text")
 
+_QUALITY_RULES_EN = """
+Additional strict output rules:
+1) summary must be a semantic compression, not a quote or a truncated copy.
+2) Never end summary with ellipsis (...).
+3) keywords must be actionable noun-like terms; avoid particles/function words/noise.
+4) Merge lexical variants into one canonical keyword
+   (e.g., 통돌, 통돌이는, 통돌이로 -> 통돌이).
+5) Prefer Korean topic labels for readability when possible.
+"""
+
 
 # ─────────────────────────────────────────
 # 언어 감지 (간단 휴리스틱)
@@ -151,7 +161,8 @@ def get_system_prompt(language: str = "ko") -> str:
         "ko": _KO_SYSTEM_PROMPT,
         # "en": _EN_SYSTEM_PROMPT,  # v0.2 에서 추가
     }
-    return prompts.get(language, _KO_SYSTEM_PROMPT)
+    base_prompt = prompts.get(language, _KO_SYSTEM_PROMPT)
+    return f"{base_prompt}\n\n{_QUALITY_RULES_EN}"
 
 
 def get_user_message(comment_text: str, language: str = "ko") -> str:
