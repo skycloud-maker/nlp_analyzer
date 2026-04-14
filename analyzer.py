@@ -47,7 +47,7 @@ import re
 from collections import Counter
 from datetime import datetime
 from difflib import SequenceMatcher
-from typing import Optional
+from typing import Any, Optional
 
 # Post-processing in this module keeps LLM output usable for dashboards.
 
@@ -127,6 +127,23 @@ INQUIRY_MARKERS = (
 RHETORICAL_MARKERS = ("왜그럴까요", "말이되나요", "아닌가요", "맞나요", "되겠냐")
 
 TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z'-]+|[0-9A-Za-z가-힣/]+")
+
+POINT_CONTEXT_RULES: list[tuple[tuple[str, ...], str]] = [
+    (("구독", "가입", "해지", "약정", "월납", "할부", "요금", "권유", "매니저"), "구독/계약"),
+    (("as", "a/s", "서비스", "수리", "기사", "출장", "보증", "접수", "교체"), "A/S·수리"),
+    (("배송", "설치", "지연", "도착", "방문", "일정"), "배송·설치"),
+    (("가격", "비용", "비싸", "가성비", "할인", "환불", "반품"), "가격·비용"),
+    (("소음", "고장", "성능", "불량", "내구", "발열", "누수", "품질", "세척", "흡입"), "성능·품질"),
+    (("불편", "무거", "사용", "조작", "앱", "연동", "ui", "편의"), "사용성·편의"),
+    (("비교", "vs", "대비", "전작", "이전", "타사", "삼성", "다이슨"), "비교 맥락"),
+    (("구매", "구입", "결정", "교체", "선택", "바꿨"), "구매 전환"),
+    (("추천", "강추", "재구매", "지인", "주변"), "추천 의도"),
+]
+
+GENERIC_POINT_TOKENS = {
+    "이거", "그거", "문제", "이슈", "제품", "가전", "느낌", "부분", "진짜", "너무", "약간",
+    "정말", "뭔가", "그냥", "계속", "항상", "이번", "저번", "정도",
+}
 
 
 def _normalize_space(text: str) -> str:
@@ -214,6 +231,125 @@ def _clean_keywords(raw_keywords: list[str], raw_text: str, limit: int = 5) -> l
     return cleaned[:limit]
 
 
+def _dedupe_keep_order(items: list[str], limit: int) -> list[str]:
+    seen: set[str] = set()
+    output: list[str] = []
+    for item in items:
+        value = _normalize_space(item)
+        if not value or value in seen:
+            continue
+        seen.add(value)
+        output.append(value)
+        if len(output) >= limit:
+            break
+    return output
+
+
+def _extract_point_layer(
+    raw_text: str,
+    topics: list[str],
+    keywords: list[str],
+    label: str,
+    is_inquiry: bool,
+) -> dict[str, list[str]]:
+    lowered = _normalize_space(raw_text).lower()
+    if not lowered:
+        return {"core_points": [], "context_tags": [], "similarity_keys": []}
+
+    core_candidates: list[str] = []
+    for topic in topics:
+        value = _normalize_topic(topic)
+        if value:
+            core_candidates.append(value)
+    for keyword in keywords:
+        value = _normalize_keyword(keyword)
+        if value and value not in GENERIC_POINT_TOKENS:
+            core_candidates.append(value)
+
+    # Recover from thin keyword output by extracting tokens from text.
+    if len(core_candidates) < 2:
+        for token in _extract_keywords_from_text(raw_text, limit=8):
+            if token not in GENERIC_POINT_TOKENS:
+                core_candidates.append(token)
+    if len(core_candidates) < 2:
+        for token in re.findall(r"[가-힣]{2,8}", raw_text):
+            normalized = _normalize_keyword(token)
+            if normalized and normalized not in GENERIC_POINT_TOKENS:
+                core_candidates.append(normalized)
+
+    core_points = _dedupe_keep_order(core_candidates, limit=6)
+
+    context_tags: list[str] = []
+    for markers, tag in POINT_CONTEXT_RULES:
+        if any(marker in lowered for marker in markers):
+            context_tags.append(tag)
+
+    if is_inquiry:
+        context_tags.append("문의/해결요청")
+    if label == "negative":
+        context_tags.append("불만 신호")
+    elif label == "positive":
+        context_tags.append("강점 신호")
+
+    context_tags = _dedupe_keep_order(context_tags, limit=6)
+
+    similarity_keys: list[str] = []
+    similarity_keys.extend([f"ctx:{tag}" for tag in context_tags[:3]])
+    similarity_keys.extend([f"pt:{point}" for point in core_points[:4]])
+    similarity_keys = _dedupe_keep_order(similarity_keys, limit=10)
+
+    return {
+        "core_points": core_points,
+        "context_tags": context_tags,
+        "similarity_keys": similarity_keys,
+    }
+
+
+def _pick_variant(raw_text: str, options: list[str]) -> str:
+    if not options:
+        return ""
+    seed = sum(ord(ch) for ch in _normalize_space(raw_text)) % len(options)
+    return options[seed]
+
+
+def _build_insight_summary(
+    raw_text: str,
+    label: str,
+    scenario: str,
+    core_points: list[str],
+    context_tags: list[str],
+    is_inquiry: bool,
+) -> str | None:
+    if label in EMPTY_CONTENT_LABELS:
+        return None
+
+    focus = ", ".join(core_points[:2]) if core_points else scenario
+    context_hint = context_tags[0] if context_tags else scenario
+
+    if is_inquiry:
+        return f"{context_hint} 맥락에서 '{focus}' 관련 안내·처리 절차에 대한 정보 니즈가 확인됩니다."
+
+    if label == "negative":
+        templates = [
+            f"{context_hint} 단계에서 '{focus}' 불만이 확인되어 단기 대응 우선순위 검토가 필요합니다.",
+            f"댓글은 {context_hint} 맥락의 '{focus}' 문제를 지적하며 개선 액션 후보로 볼 수 있는 신호입니다.",
+        ]
+        return _pick_variant(raw_text, templates)
+
+    if label == "positive":
+        if "비교 맥락" in context_tags:
+            templates = [
+                f"비교 맥락에서 '{focus}' 강점이 선택 근거로 작동한다는 신호가 확인됩니다.",
+                f"타사/이전 경험 대비 '{focus}' 우위가 구매 판단에 기여한 것으로 해석됩니다.",
+            ]
+            return _pick_variant(raw_text, templates)
+        if "추천 의도" in context_tags or "구매 전환" in context_tags:
+            return f"'{focus}' 강점이 추천·구매 전환으로 이어질 수 있음을 시사하는 긍정 신호입니다."
+        return f"'{focus}' 만족 경험이 반복되어 유지·확대할 강점 가설로 볼 수 있습니다."
+
+    return f"{context_hint} 중심으로 '{focus}' 관련 관찰 신호가 확인되어 추세 모니터링이 필요합니다."
+
+
 def _is_summary_low_quality(summary: str, raw_text: str) -> bool:
     normalized_summary = _normalize_space(summary)
     if not normalized_summary:
@@ -245,39 +381,6 @@ def _infer_summary_scenario(raw_text: str, topics: list[str], keywords: list[str
     return "제품 사용 경험"
 
 
-def _build_semantic_summary(
-    raw_text: str,
-    label: str,
-    topics: list[str],
-    keywords: list[str],
-    is_inquiry: bool,
-) -> str:
-    scenario = _infer_summary_scenario(raw_text, topics, keywords)
-    if is_inquiry:
-        return f"{scenario} 관련 조건이나 해결 방법을 확인하려는 문의성 댓글입니다."
-    if label == "negative":
-        return f"{scenario} 과정에서 불편·불만을 제기한 댓글입니다."
-    if label == "positive":
-        return f"{scenario} 경험에 대한 만족 또는 추천 의사를 드러낸 댓글입니다."
-    return f"{scenario} 관련 경험과 의견을 전달한 중립적 댓글입니다."
-
-
-def _clean_summary(
-    summary: str | None,
-    raw_text: str,
-    label: str,
-    topics: list[str],
-    keywords: list[str],
-    is_inquiry: bool,
-) -> str | None:
-    if label in EMPTY_CONTENT_LABELS:
-        return None
-    candidate = _normalize_space(summary or "")
-    if _is_summary_low_quality(candidate, raw_text):
-        candidate = _build_semantic_summary(raw_text, label, topics, keywords, is_inquiry)
-    return candidate
-
-
 def _infer_inquiry_from_text(raw_text: str) -> bool:
     lowered = _normalize_space(raw_text).lower()
     if not lowered:
@@ -291,6 +394,56 @@ def _infer_inquiry_from_text(raw_text: str) -> bool:
     return False
 
 
+# ---------------------------------------------------------------------------
+# v2 post-processing overrides (point extraction / similarity / score metadata)
+# ---------------------------------------------------------------------------
+def _build_semantic_summary(
+    raw_text: str,
+    label: str,
+    topics: list[str],
+    keywords: list[str],
+    is_inquiry: bool,
+    core_points: list[str] | None = None,
+    context_tags: list[str] | None = None,
+) -> str:
+    scenario = _infer_summary_scenario(raw_text, topics, keywords)
+    point_focus = ", ".join((core_points or [])[:2]) if core_points else scenario
+    context_focus = (context_tags or [scenario])[0]
+    if is_inquiry:
+        return f"{context_focus}에서 {point_focus} 관련 조건·절차 확인을 요청하는 문의성 댓글입니다."
+    if label == "negative":
+        return f"{context_focus} 과정에서 {point_focus} 문제로 불편·불만을 제기하는 댓글입니다."
+    if label == "positive":
+        return f"{context_focus} 맥락에서 {point_focus} 강점·만족을 언급한 댓글입니다."
+    return f"{context_focus} 중심으로 {point_focus} 관련 관찰 의견을 남긴 댓글입니다."
+
+
+def _clean_summary(
+    summary: str | None,
+    raw_text: str,
+    label: str,
+    topics: list[str],
+    keywords: list[str],
+    is_inquiry: bool,
+    core_points: list[str] | None = None,
+    context_tags: list[str] | None = None,
+) -> str | None:
+    if label in EMPTY_CONTENT_LABELS:
+        return None
+    candidate = _normalize_space(summary or "")
+    if _is_summary_low_quality(candidate, raw_text):
+        candidate = _build_semantic_summary(
+            raw_text,
+            label,
+            topics,
+            keywords,
+            is_inquiry,
+            core_points=core_points or [],
+            context_tags=context_tags or [],
+        )
+    return candidate
+
+
 def _calibrate_confidence(
     label: str,
     confidence: float,
@@ -299,30 +452,68 @@ def _calibrate_confidence(
     keywords: list[str],
     summary: str | None,
     is_inquiry: bool,
-) -> float:
+    core_points: list[str] | None = None,
+    context_tags: list[str] | None = None,
+    sentiment_reason: str = "",
+) -> tuple[float, list[str], dict[str, float], float]:
     score = max(0.0, min(1.0, float(confidence)))
     if label not in {"positive", "negative", "neutral"}:
-        return score
+        return score, [], {"llm_base": round(score, 4)}, 0.0
 
     lowered = _normalize_space(raw_text).lower()
+    factors: list[str] = []
+    breakdown: dict[str, float] = {"llm_base": round(score, 4)}
+
+    def add(reason: str, delta: float) -> None:
+        nonlocal score
+        score += delta
+        factors.append(reason)
+        breakdown[reason] = round(delta, 4)
+
     if topics:
-        score += 0.04
+        add("topic_alignment", 0.04)
     if len(keywords) >= 2:
-        score += 0.05
-    if summary and len(summary) >= 16:
-        score += 0.04
-    if label == "negative" and any(marker in lowered for marker in NEGATIVE_MARKERS):
-        score += 0.06
-    if label == "positive" and any(marker in lowered for marker in POSITIVE_MARKERS):
-        score += 0.06
+        add("keyword_signal", 0.04)
+    if core_points:
+        add("point_extraction", min(0.07, 0.02 * len(core_points[:3])))
+    if context_tags:
+        add("context_signal", min(0.06, 0.02 * len(context_tags[:3])))
+    if summary and len(summary) >= 18:
+        add("summary_quality", 0.03)
+    if sentiment_reason and len(_normalize_space(sentiment_reason)) >= 12:
+        add("reason_quality", 0.03)
+
+    neg_hits = sum(1 for marker in NEGATIVE_MARKERS if marker in lowered)
+    pos_hits = sum(1 for marker in POSITIVE_MARKERS if marker in lowered)
+    if label == "negative" and neg_hits:
+        add("negative_marker", min(0.12, 0.03 * neg_hits))
+    if label == "positive" and pos_hits:
+        add("positive_marker", min(0.12, 0.03 * pos_hits))
     if label in {"positive", "negative"} and is_inquiry:
-        score -= 0.03
+        add("inquiry_penalty", -0.02)
+    elif label == "neutral" and is_inquiry:
+        add("inquiry_signal", 0.02)
+
+    marker_hits = max(neg_hits, pos_hits)
+    intensity = 0.28 + min(0.24, 0.06 * marker_hits) + min(0.24, 0.08 * len((core_points or [])[:3]))
+    if label in {"positive", "negative"}:
+        intensity += 0.12
+    if is_inquiry:
+        intensity += 0.06
+    intensity = max(0.0, min(1.0, intensity))
 
     if label in {"positive", "negative"}:
-        score = max(0.45, min(0.97, score))
+        floor = 0.58 if (marker_hits > 0 or len((core_points or [])) >= 2 or topics) else 0.5
+        if is_inquiry:
+            floor = min(floor, 0.56)
+        score = max(floor, min(0.98, score))
     else:
-        score = max(0.35, min(0.9, score))
-    return score
+        score = max(0.4, min(0.92, score))
+
+    score = round(score, 4)
+    if not factors:
+        factors = ["base_model_signal"]
+    return score, factors[:6], breakdown, round(intensity, 4)
 
 try:
     from .models import (
@@ -422,6 +613,12 @@ def _build_result(
         bool(parsed.get("is_inquiry", False)) or _infer_inquiry_from_text(raw_text)
     )
     is_rhetorical = False if is_empty else bool(parsed.get("is_rhetorical", False))
+    point_layer = (
+        {"core_points": [], "context_tags": [], "similarity_keys": []}
+        if is_empty
+        else _extract_point_layer(raw_text, topics, keywords, label, is_inquiry)
+    )
+    sentiment_reason = _normalize_space(parsed.get("sentiment_reason", ""))
     summary = _clean_summary(
         parsed.get("summary"),
         raw_text=raw_text,
@@ -429,13 +626,27 @@ def _build_result(
         topics=topics,
         keywords=keywords,
         is_inquiry=is_inquiry,
+        core_points=point_layer["core_points"],
+        context_tags=point_layer["context_tags"],
+    )
+    insight_summary = (
+        None
+        if is_empty
+        else _build_insight_summary(
+            raw_text=raw_text,
+            label=label,
+            scenario=_infer_summary_scenario(raw_text, topics, keywords),
+            core_points=point_layer["core_points"],
+            context_tags=point_layer["context_tags"],
+            is_inquiry=is_inquiry,
+        )
     )
 
     # is_inquiry + is_rhetorical 상호 배타 보정
     if is_inquiry and is_rhetorical:
         is_rhetorical = False  # inquiry 우선
 
-    confidence = _calibrate_confidence(
+    confidence, confidence_factors, confidence_breakdown, sentiment_intensity = _calibrate_confidence(
         label=label,
         confidence=float(parsed.get("confidence", 0.5)),
         raw_text=raw_text,
@@ -443,6 +654,9 @@ def _build_result(
         keywords=keywords,
         summary=summary,
         is_inquiry=is_inquiry,
+        core_points=point_layer["core_points"],
+        context_tags=point_layer["context_tags"],
+        sentiment_reason=sentiment_reason,
     )
 
     return AnalysisResult(
@@ -451,7 +665,7 @@ def _build_result(
         language=language,
         label=label,
         confidence=confidence,
-        sentiment_reason=_normalize_space(parsed.get("sentiment_reason", "")),
+        sentiment_reason=sentiment_reason,
         topics=topics,
         topic_sentiments=topic_sentiments,
         is_inquiry=is_inquiry,
@@ -459,6 +673,13 @@ def _build_result(
         summary=summary,
         keywords=keywords,
         product_mentions=product_mentions,
+        core_points=point_layer["core_points"],
+        context_tags=point_layer["context_tags"],
+        similarity_keys=point_layer["similarity_keys"],
+        insight_summary=insight_summary,
+        confidence_factors=confidence_factors,
+        confidence_breakdown=confidence_breakdown,
+        sentiment_intensity=sentiment_intensity,
         analyzed_at=datetime.utcnow(),
         llm_provider=llm_provider,
         model_name=model_name,

@@ -79,6 +79,17 @@ class AnalysisResult:
     keywords: list[str] = field(default_factory=list)           # 최대 5개
     product_mentions: list[str] = field(default_factory=list)   # 언급된 LG 제품명
 
+    # point extraction / similarity layer (dashboard-facing evidence fields)
+    core_points: list[str] = field(default_factory=list)
+    context_tags: list[str] = field(default_factory=list)
+    similarity_keys: list[str] = field(default_factory=list)
+    insight_summary: Optional[str] = None
+
+    # confidence metadata (formula disclosure 대신 판단 근거 제공)
+    confidence_factors: list[str] = field(default_factory=list)
+    confidence_breakdown: dict[str, float] = field(default_factory=dict)
+    sentiment_intensity: float = 0.0
+
     # ── 메타 ──────────────────────────────
     analyzed_at: datetime = field(default_factory=datetime.utcnow)
     llm_provider: str = "claude"            # "claude" | "openai"
@@ -141,6 +152,8 @@ def validate(result: AnalysisResult) -> list[ValidationError]:
     # confidence
     if not (0.0 <= result.confidence <= 1.0):
         errors.append(ValidationError("confidence", f"범위 초과: {result.confidence}"))
+    if not (0.0 <= result.sentiment_intensity <= 1.0):
+        errors.append(ValidationError("sentiment_intensity", f"범위 초과: {result.sentiment_intensity}"))
 
     # topic_sentiments 값
     for topic, sentiment in result.topic_sentiments.items():
@@ -157,6 +170,12 @@ def validate(result: AnalysisResult) -> list[ValidationError]:
     # keywords 최대 5개
     if len(result.keywords) > 5:
         errors.append(ValidationError("keywords", f"최대 5개 허용, 현재 {len(result.keywords)}개"))
+    if len(result.core_points) > 8:
+        errors.append(ValidationError("core_points", f"최대 8개 허용, 현재 {len(result.core_points)}개"))
+    if len(result.context_tags) > 6:
+        errors.append(ValidationError("context_tags", f"최대 6개 허용, 현재 {len(result.context_tags)}개"))
+    if len(result.similarity_keys) > 10:
+        errors.append(ValidationError("similarity_keys", f"최대 10개 허용, 현재 {len(result.similarity_keys)}개"))
 
     # trash / undecidable → 빈 필드 강제
     if result.label in EMPTY_CONTENT_LABELS:
@@ -168,6 +187,14 @@ def validate(result: AnalysisResult) -> list[ValidationError]:
             errors.append(ValidationError("summary", f"{result.label} 레이블은 None이어야 함"))
         if result.keywords:
             errors.append(ValidationError("keywords", f"{result.label} 레이블은 빈 배열이어야 함"))
+        if result.core_points:
+            errors.append(ValidationError("core_points", f"{result.label} 레이블은 빈 배열이어야 함"))
+        if result.context_tags:
+            errors.append(ValidationError("context_tags", f"{result.label} 레이블은 빈 배열이어야 함"))
+        if result.similarity_keys:
+            errors.append(ValidationError("similarity_keys", f"{result.label} 레이블은 빈 배열이어야 함"))
+        if result.insight_summary is not None:
+            errors.append(ValidationError("insight_summary", f"{result.label} 레이블은 None이어야 함"))
         if result.is_inquiry:
             errors.append(ValidationError("is_inquiry", f"{result.label} 레이블은 False이어야 함"))
         if result.is_rhetorical:
