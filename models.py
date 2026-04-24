@@ -41,26 +41,26 @@ class AnalysisResult:
     - error 가 있으면 label 은 "undecidable" 로 고정
     """
 
-    # ── 식별 ──────────────────────────────
+    # ── 식별 ────────────────────────────────────
     comment_id: str
     raw_text: str
     language: str                           # "ko" | "en" | "unknown"
 
-    # ── 감성 레이블 ───────────────────────
+    # ── 감성 레이블 ─────────────────────────────────
     label: str                              # positive | negative | neutral | trash | undecidable
     confidence: float                       # 0.0 ~ 1.0
 
-    # ── 감성 근거 ─────────────────────────
+    # ── 감성 근거 ────────────────────────────────────
     sentiment_reason: str                   # 레이블 판단 근거 한 문장
 
-    # ── 토픽 ──────────────────────────────
+    # ── 토픽 ──────────────────────────────────────────
     topics: list[str] = field(default_factory=list)             # 최대 3개
     topic_sentiments: dict[str, str] = field(default_factory=dict)
     # {"디자인": "positive", "AS": "negative"}
     # 값은 VALID_TOPIC_SENTIMENTS 만 허용
     # trash / undecidable → 빈 dict
 
-    # ── 문의 / 수사적 질문 ────────────────
+    # ── 문의 / 수사적 질문 ───────────────────────────────
     is_inquiry: bool = False
     # 실제 답변/안내/확인/조치를 기대하는 발화
     # 판단 기준: 문장 형식(물음표)이 아닌 발화 의도
@@ -74,23 +74,28 @@ class AnalysisResult:
     # is_inquiry=True 이면 is_rhetorical 은 반드시 False (상호 배타적)
     # trash / undecidable → 항상 False
 
-    # ── 요약 / 키워드 ─────────────────────
+    # ── 요약 / 키워드 ───────────────────────────────────
     summary: Optional[str] = None           # 한 문장 요약. trash/undecidable → None
     keywords: list[str] = field(default_factory=list)           # 최대 5개
     product_mentions: list[str] = field(default_factory=list)   # 언급된 LG 제품명
 
     # point extraction / similarity layer (dashboard-facing evidence fields)
+    # BREAKING CHANGE (v0.3): core_points 출력 형식 변경
+    #   이전: 단어 키워드 배열 ["거름망", "냄새", "세첩"]
+    #   이후: 문장형 서술문 배열 ["거름망을 안 씨으면 냄새 남", "근시원서 손설거지로 회귀"]
+    #   youtube-comment-analyzer 등 core_points를 직접 파싱/분리하는 하위 소비자는 수정 필요
     core_points: list[str] = field(default_factory=list)
     context_tags: list[str] = field(default_factory=list)
     similarity_keys: list[str] = field(default_factory=list)
     insight_summary: Optional[str] = None
+    user_wants: str = ""                    # 사용자가 진짜 원하는 것 (10~25자 한국어 한 문장, LLM 직접 생성)
 
     # confidence metadata (formula disclosure 대신 판단 근거 제공)
     confidence_factors: list[str] = field(default_factory=list)
     confidence_breakdown: dict[str, float] = field(default_factory=dict)
     sentiment_intensity: float = 0.0
 
-    # ── 메타 ──────────────────────────────
+    # ── 메타 ──────────────────────────────────────────
     analyzed_at: datetime = field(default_factory=datetime.utcnow)
     llm_provider: str = "claude"            # "claude" | "openai"
     model_name: str = ""                    # "claude-sonnet-4-20250514" 등
