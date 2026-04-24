@@ -618,6 +618,16 @@ def _build_result(
         if is_empty
         else _extract_point_layer(raw_text, topics, keywords, label, is_inquiry)
     )
+
+    # LLM이 직접 생성한 서술형 core_points 우선 사용; 없으면 키워드 기반 fallback
+    llm_core_points = [] if is_empty else [
+        _normalize_space(p) for p in parsed.get("core_points", []) if _normalize_space(p)
+    ]
+    final_core_points = llm_core_points[:8] if llm_core_points else point_layer["core_points"]
+
+    # user_wants: LLM 생성값, trash/undecidable은 강제로 빈 문자열
+    user_wants = "" if is_empty else _normalize_space(parsed.get("user_wants", ""))
+
     sentiment_reason = _normalize_space(parsed.get("sentiment_reason", ""))
     summary = _clean_summary(
         parsed.get("summary"),
@@ -626,7 +636,7 @@ def _build_result(
         topics=topics,
         keywords=keywords,
         is_inquiry=is_inquiry,
-        core_points=point_layer["core_points"],
+        core_points=final_core_points,
         context_tags=point_layer["context_tags"],
     )
     insight_summary = (
@@ -636,7 +646,7 @@ def _build_result(
             raw_text=raw_text,
             label=label,
             scenario=_infer_summary_scenario(raw_text, topics, keywords),
-            core_points=point_layer["core_points"],
+            core_points=final_core_points,
             context_tags=point_layer["context_tags"],
             is_inquiry=is_inquiry,
         )
@@ -654,7 +664,7 @@ def _build_result(
         keywords=keywords,
         summary=summary,
         is_inquiry=is_inquiry,
-        core_points=point_layer["core_points"],
+        core_points=final_core_points,
         context_tags=point_layer["context_tags"],
         sentiment_reason=sentiment_reason,
     )
@@ -673,7 +683,8 @@ def _build_result(
         summary=summary,
         keywords=keywords,
         product_mentions=product_mentions,
-        core_points=point_layer["core_points"],
+        core_points=final_core_points,
+        user_wants=user_wants,
         context_tags=point_layer["context_tags"],
         similarity_keys=point_layer["similarity_keys"],
         insight_summary=insight_summary,

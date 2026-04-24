@@ -81,6 +81,10 @@ class AnalysisResult:
 
     # point extraction / similarity layer (dashboard-facing evidence fields)
     core_points: list[str] = field(default_factory=list)
+    # BREAKING CHANGE (v0.3): core_points 형식이 단어 키워드 배열에서
+    # 서술형 클레임(2~4개, 각 30자 이하)으로 변경됨.
+    # 예전: ["거름망", "냄새"] → 이후: ["거름망을 안 씻으면 냄새 남"]
+    user_wants: str = ""
     context_tags: list[str] = field(default_factory=list)
     similarity_keys: list[str] = field(default_factory=list)
     insight_summary: Optional[str] = None
@@ -189,6 +193,8 @@ def validate(result: AnalysisResult) -> list[ValidationError]:
             errors.append(ValidationError("keywords", f"{result.label} 레이블은 빈 배열이어야 함"))
         if result.core_points:
             errors.append(ValidationError("core_points", f"{result.label} 레이블은 빈 배열이어야 함"))
+        if result.user_wants:
+            errors.append(ValidationError("user_wants", f"{result.label} 레이블은 빈 문자열이어야 함"))
         if result.context_tags:
             errors.append(ValidationError("context_tags", f"{result.label} 레이블은 빈 배열이어야 함"))
         if result.similarity_keys:
